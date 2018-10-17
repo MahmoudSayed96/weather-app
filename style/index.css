@@ -1,0 +1,531 @@
+/* ================================ CSS Reset  ================================*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ================================ Ripple CSS ================================ */
+/* Ripple CSS For Buttons Affect Style */
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .2;
+    transition: 0s;
+}
+
+/* ================================ Loader ================================ */
+/* Loader CSS For Loading Page */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #353B48;
+    border-color: #353B48 transparent #353B48 transparent;
+    animation: lds-dual-ring 1.2s ease-in-out infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ================================ General Stlye ================================ */
+
+html,
+body,
+main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+main {
+    background-image: url('../assets/images/bg-images/clear-day.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* ================================ General Used Classes ================================ */
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-x {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.center-y {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+.display-none {
+    display: none !important;
+}
+
+.icon-sm-25 {
+    width: 25px;
+}
+
+.icon-sm-28 {
+    width: 28px;
+}
+
+.icon-sm-30 {
+    width: 30px;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.flex-container>* {
+    flex: 1 1 0;
+}
+
+.disabled {
+    background: #ddd !important;
+    color: gray !important;
+}
+
+/* ================================ Open Menu Button ================================ */
+
+#open-menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* ================================ Current Weather Section ================================ */
+
+#current-day-weather-container {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    color: #fff;
+    padding: 80px 30px 20px 30px;
+}
+
+.location-label {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+    margin-bottom: 50px;
+}
+
+#temprature-summery-container {
+    align-items: center;
+}
+
+
+#temprature-summery-container>div:nth-child(2) {
+    text-align: center;
+}
+
+#degrees-label {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+#summery-label {
+    font-size: 30px;
+}
+
+#humidity-wind-container {
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    left: 0;
+}
+
+
+#humidity-wind-container>div img {
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
+
+#humidity-wind-container>div span {
+    font-size: 18px;
+}
+
+/* ================================ Lower Pannal Section ================================ */
+
+.lower-pannal {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+}
+
+.lower-pannal-body {
+    width: 100%;
+    height: 100%;
+    padding: 50px 25px;
+    overflow-y: scroll;
+}
+
+#toggle-hourly-weather {
+    background: #353B48;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+    box-shadow: 3px 0 14px 2px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#toggle-hourly-weather img {
+    transition: transform .5s;
+}
+
+.weather-box {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.weather-box>div:last-child {
+    text-align: right;
+}
+
+.weather-box>div:last-child>div:last-child {
+    flex: 0.5 0.5 0;
+}
+
+/* Current day of the week hint */
+.current-day-of-week:before {
+    content: "";
+    display: block;
+    border-radius: 100%;
+    background: #ee5253;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* ================================ daliy Weather ================================ */
+
+#daliy-weather-wrapper {
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity .5s;
+}
+
+/* ================================ Hourly Weather ================================ */
+#hourly-weather-wrapper {
+    background: rgba(236, 240, 241, 0.6);
+    color: #353B48;
+    position: fixed;
+    bottom: -100%;
+    transition: bottom 0.5s;
+    height: inherit;
+}
+
+#hourly-weather-wrapper>div>div:last-child {
+    color: #636e72;
+}
+
+#daliy-weather-wrapper {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+#daliy-weather-wrapper {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ================================ Menu ================================ */
+#menu-container {
+    position: fixed;
+    width: 65%;
+    height: 100%;
+    top: 0;
+    right: -65%;
+    color: #fff;
+    z-index: 4;
+    transition: right .5s;
+}
+
+#close-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#menu-container>div {
+    width: 100%;
+    height: 100%;
+    background: rgba(53, 52, 73, 0.9);
+}
+
+#add-location-wrapper {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    padding: 60px 20px 0 20px;
+}
+
+#location-input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ee5253;
+    padding-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+
+#location-input::-webkit-input-placeholder {
+    color: #acacac;
+}
+
+#location-input::-moz-input-placeholder {
+    color: #acacac;
+}
+
+#location-input::-o-input-placeholder {
+    color: #acacac;
+}
+
+#add-city-btn {
+    background: #ee5253;
+    color: #fff;
+    padding: 7px 12px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 16px;
+    letter-spacing: 1.1px;
+}
+
+#add-location-wrapper .location-label {
+    font-size: 25px;
+}
+
+#save-cities-wrapper {
+    width: 100%;
+    height: 50%;
+    overflow-y: scroll;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.saved-city-box {
+    border-bottom: 2px solid #636e72;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.saved-city-box>div:first-child {
+    flex: .5 .5 0;
+}
+
+.saved-city-box>div:last-child {
+    text-align: right;
+}
+
+.remove-saved-city-btn {
+    border: 2px solid #ee5253;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 16px;
+}
